@@ -20,6 +20,9 @@ This Node.js application connects to Elasticsearch to search for addresses. It a
    ```bash
   git clone https://github.com/binyamind/addresses-search-be.git
     ```
+```bash
+cd to the repo
+```  
   
 # 2. Install dependencies
 ```
