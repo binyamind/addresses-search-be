@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es2016",
+    "lib": ["ES6"],
+    "module": "CommonJS",
+    "rootDir": "src",
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": false,
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*.ts", ]
+}
