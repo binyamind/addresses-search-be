@@ -11,3 +11,13 @@ export type ResponseAddress = Pick<
   | "secondary"
   | "type"
 > & { id: string | undefined };
+
+export type AvailableFilters = {
+  availableType?: Array<string>;
+  availableNeighbourhoods?: Array<string>;
+};
+
+export interface ResponseAddressWithFilters {
+  addresses: Array<ResponseAddress>;
+  availableFilters: AvailableFilters;
+}

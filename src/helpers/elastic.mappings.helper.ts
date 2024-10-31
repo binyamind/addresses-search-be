@@ -2,26 +2,26 @@ export const mappings = {
   mappings: {
     properties: {
       main: {
-        type: "text", 
+        type: "text",
         fields: {
           keyword: {
-            type: "keyword", 
+            type: "keyword",
           },
         },
       },
       description: {
-        type: "text", 
+        type: "text",
         fields: {
           keyword: {
-            type: "keyword", 
+            type: "keyword",
           },
         },
       },
       secondary: {
-        type: "text", 
+        type: "text",
         fields: {
           keyword: {
-            type: "keyword", 
+            type: "keyword",
           },
         },
       },
@@ -29,7 +29,7 @@ export const mappings = {
         type: "text",
         fields: {
           keyword: {
-            type: "keyword", 
+            type: "keyword",
           },
         },
       },
@@ -45,23 +45,28 @@ export const mappings = {
         type: "text",
         fields: {
           keyword: {
-            type: "keyword"
+            type: "keyword",
           },
         },
       },
       code: {
-        type: "integer", 
+        type: "integer",
+        fields: { 
+          keyword: {
+            type: "keyword",
+          },
+        },
       },
       neighbourhood: {
-        type: "text", 
+        type: "text",
         fields: {
           keyword: {
-            type: "keyword", 
+            type: "keyword",
           },
         },
       },
       isAvailableForSearch: {
-        type: "boolean", 
+        type: "boolean",
       },
     },
   },

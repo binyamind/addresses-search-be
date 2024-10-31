@@ -33,7 +33,7 @@ async function bootstrap() {
     const esData = await convertCsvToJson();
     await elastic.defineMapping(); 
     await elastic.loadCsvToElasticsearch(esData);
-  })();
+  })(); 
 }
 app.use("/api", routes.routes());
 app.listen(port, async () => {

@@ -12,3 +12,20 @@ export interface ElasticSourceResult {
   neighbourhood: string;
   isAvailableForSearch: boolean;
 }
+export interface Aggregations {
+  available_types:{
+    doc_count_error_upper_bound: number;
+    sum_other_doc_count: number;
+    buckets: Array<Buckets>
+  },
+  available_neighbourhoods:{
+    doc_count_error_upper_bound: number;
+    sum_other_doc_count: number;
+    buckets: Array<Buckets>
+  }
+}
+
+export interface Buckets{
+  key: string;
+  doc_count: string | number
+}

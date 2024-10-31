@@ -87,13 +87,25 @@ export class ElasticsearchRepository implements ElasticsearchRepositoryService {
   }
   async search(query: any, size = 6) {
     try {
-      const newLocal = await this.client.search({
+      return await this.client.search({
         index: this.indexName,
         query: query,
         size,
+        aggs: {
+          available_types: {
+            terms: {
+              field: "type.keyword",
+              size: 100,
+            },
+          },
+          available_neighbourhoods: {
+            terms: {
+              field: "neighbourhood.keyword",
+              size: 100,
+            },
+          },
+        },
       });
-      console.log(JSON.stringify(newLocal,null,2));
-      return newLocal;
     } catch (error) {
       console.log(error);
     }

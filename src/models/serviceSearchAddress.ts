@@ -1,15 +1,17 @@
 import { SearchHit } from "@elastic/elasticsearch/lib/api/types";
 import { QueryParams } from "./queryParams";
-import { ResponseAddress } from "./responseAddress";
+import { ResponseAddress, ResponseAddressWithFilters } from "./responseAddress";
 import { SearchAddressTerm } from "./Address";
+import { Aggregations } from "./elasticSourceResult";
 
 export interface ServiceSearchAddress{
      getElasticResult(
         query: QueryParams
-      ): Promise<Array<ResponseAddress>>;
+      ): Promise<ResponseAddressWithFilters>;
       mapResultToResponse(
-        result: SearchHit[]
-      ): Array<ResponseAddress>
+        result: SearchHit[],
+        aggregations: Aggregations
+      ): ResponseAddressWithFilters
       replcaeQueryString(
         esQuery: { [key: string]: any },
         searchSpce: SearchAddressTerm,

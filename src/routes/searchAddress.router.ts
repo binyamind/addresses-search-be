@@ -34,7 +34,6 @@ export class AddressRoutes {
       async (req: Request, res: Response) => {
         
         const { body } = req;
-        console.log(body);
         res.status(204);
         res.send(
           this.toPluginResponse(
