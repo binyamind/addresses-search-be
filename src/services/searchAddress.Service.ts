@@ -100,7 +100,7 @@ export class SearchAddress implements ServiceSearchAddress {
     console.log(JSON.stringify(esQuery,null,2))
     const result = await this.elasticRepository.search(
       esQuery as QueryDslQueryContainer,
-      searchSpec === "fullAddress" ? 3 : 6
+      searchSpec === "fullAddress" ? 1 : 6
     );
     return this.mapResultToResponse(
       result?.hits.hits as SearchHit[],
