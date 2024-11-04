@@ -73,7 +73,7 @@ export const availableTypeFilterQuery = {
     "type.keyword": [] as string[],
   },
 };
-export const searchByFullAddress = (input: string) => {
+export const searchByFullAddressQuery = (input: string) => {
   const terms = input.split(" ").filter((term) => term.trim() !== "");
   const mustClauses: any[] = [];
 
@@ -126,7 +126,7 @@ export const filtersQuery = {
 };
 export const queyrByEnum = {
   main: searchByMainAddress,
-  fullAddress: searchByFullAddress,
+  fullAddress: searchByFullAddressQuery,
   partialAddress: searchByPartialAddress,
 };
 export function getFiltersQuery(

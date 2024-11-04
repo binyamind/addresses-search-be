@@ -6,7 +6,7 @@ import {
   filtersQuery,
   getFiltersQuery,
   queyrByEnum,
-  searchByFullAddress,
+  searchByFullAddressQuery,
 } from "../helpers/elastic.searchQueries.helper";
 import {
   AggregateName,
@@ -94,7 +94,7 @@ export class SearchAddress implements ServiceSearchAddress {
     let esQuery: { [key: string]: any } | any = queyrByEnum[searchSpec];
     this.replcaeQueryString(esQuery, searchSpec, q);
     if(searchSpec==='fullAddress') {
-       esQuery = searchByFullAddress(q);
+       esQuery = searchByFullAddressQuery(q);
     }
     this.buildFiltersQuery({ ...filters }, esQuery);
     console.log(JSON.stringify(esQuery,null,2))
